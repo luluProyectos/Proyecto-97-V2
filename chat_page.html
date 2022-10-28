@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Página de mensajes de Kwitter</title>
+
+<!--Estos enlaces se utilizan para poder enviar y recibir datos de Firebase.-->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+<!--Un enlace para Google Fonts para la tipografía.-->
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Enlaces bootstrap.-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!--Enlace para nuestro archivo style.css-->
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Añadir la función logout() al botón de Salir.-->
+	<button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout();">Salir</button>
+	<center>
+		<h1 class="header">	
+			Chat	
+			<sup>
+				<img src="chat.png">
+			</sup>
+		</h1>
+        <!-- Añadir id al div que se utilizará para contener los mensajes.-->
+		<div style="text-align: left;margin-bottom: 70px;" id="output"> </div>
+	</center>
+</div>
+
+<center>
+	<div class="input_div_message_page">
+		<label>Enviar:</label>
+        
+        <!-- Añadir el input para aceptar los mensajes del usuario.-->
+        <input type="text" id="msg" class="form-control" placeholder="Mensaje">
+        
+         <!-- Añadir la función send() al botón de Enviar-->
+		<button onclick="send();" class="btn btn-success">Enviar</button>
+	</div>
+</center>
+
+<!--Enlace para nuestro archivo kwitter_room.js-->
+<script src="chat_page.js"></script>
+</body>
+</html>

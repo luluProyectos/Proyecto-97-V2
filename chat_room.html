@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat</title>
+
+<!--Estos enlaces se utilizan para poder enviar y recibir datos de Firebase.-->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+<!--Un enlace para Google Fonts para la tipografía.-->
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Enlaces bootstrap.-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!--Enlace para nuestro archivo style.css-->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="container">
+<!--añade "onclick" 
+	glyphicon glyphicon-log-out - esta clase bootstrap añade un ícono de salida al botón.-->
+<button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout()">Salir</button>
+	<center>
+		<h1 class="header">	
+			Chat
+			<sup>
+				<img src="chats.png">
+			</sup>
+		</h1>
+		<!--añade id="user_name" a la etiqueta h3 que tiene class=”color_white” para mostrar el nombre del usuario-->
+		<h3 id="user_name" class="color_white"></h3>
+		<div class="form-group input_div_room_page">
+			<label>#Añadir sala:</label>
+		<!--añade un cuadro de entrada para ingresar el nombre de la sala
+			class=”form-control” - esta es una clase bootstrap que añade relleno, márgenes y borde al cuadro-->
+			<input type="text" id="room_name" class="form-control" placeholder="Nombre de la sala">
+		</div>
+		<!--añade "onclick" 
+			btn - esta clase bootstrap añade relleno y remueve el borde y el color por defecto del botón.
+			btn-success - esta clase bootstrap añade borde y un color de fondo verde claro al botón.-->
+		<button class="btn btn-success" onclick="addRoom()">#Añadir sala</button>
+		<h3 class="color_white">#SALASDETENDENCIA</h3>
+	<!--Añadir un div con id=”output”, esta etiqueta div se utiliza para los nombres de las salas-->
+		<div id="output"></div>
+	</center>
+</div>
+
+<!--Enlace para nuestro archivo kwitter_room.js-->
+<script src="chat_room.js"></script>
+</body>
+</html>
